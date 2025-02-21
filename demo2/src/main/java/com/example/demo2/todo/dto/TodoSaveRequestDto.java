@@ -7,7 +7,6 @@ public class TodoSaveRequestDto {
 
     private String content;
 
-
     public TodoSaveRequestDto(String content) {
         this.content = content;
     }

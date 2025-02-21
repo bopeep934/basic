@@ -23,16 +23,14 @@ public class TodoController {
     @PostMapping("/todos")
     public ResponseEntity<TodoSaveResponseDto> save(
             @SessionAttribute(name = Const.LOGIN_MEMBER) Long memberId,
+            @RequestBody TodoSaveRequestDto dto) {
 
-    @RequestBody
-    TodoSaveRequestDto dto)
-
-    {
         return ResponseEntity.ok(todoService.save(memberId, dto));
     }
 
     @GetMapping("/todos")
     public ResponseEntity<List<TodoResponseDto>> getAll() {
+
         return ResponseEntity.ok(todoService.findAll());
     }
 
