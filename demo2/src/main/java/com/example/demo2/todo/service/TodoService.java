@@ -82,7 +82,7 @@ public class TodoService {
     @Transactional
     public void deleteById(Long memberId, Long todoId) {
         Member member = memberRepository.findById(memberId)
-                .orElseThrow(()-> new IllegalStateException("해당 사용자를  찾을 수 없습니다."));
+                .orElseThrow(()-> new IllegalStateException("해당 사용자를 찾을 수 없습니다."));
 
         Todo todo =todoRepository.findById(todoId)
                 .orElseThrow(()-> new IllegalStateException("해당 일정을 찾을 수 없습니다."));
